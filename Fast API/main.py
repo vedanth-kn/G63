@@ -23,23 +23,23 @@ app.add_middleware(
 )
 
 # Load the model
-MODEL = tf.keras.models.load_model(r"C:\Users\user\OneDrive\Desktop\Final Year Project\Project\model.keras")
+MODEL = tf.keras.models.load_model("../model.keras")
 CLASS_NAMES = [
-    'Pepper-Bell Bacterial Spot',
-    'Pepper-Bell Healthy',
-    'Potato Early Blight',
-    'Potato Late Blight',
-    'Potato Healthy',
-    'Tomato Bacterial Spot',
-    'Tomato Early Blight',
-    'Tomato Late Blight',
-    'Tomato Leaf Mold',
-    'Tomato Septoria Leaf Spot',
-    'Tomato Spider Mites Two Spotted Spider Mite',
-    'Tomato Target Spot',
-    'Tomato YellowLeaf Curl_Virus',
-    'Tomato Mosaic Virus',
-    'Tomato Healthy'
+    'Pepper__bell__Bacterial_spot',
+    'Pepper__bell__healthy',
+    'Potato Early blight',
+    'Potato__Late_blight',
+    'Potato__Healthy',
+    'Tomato_Bacterial_spot',
+    'Tomato_Early_blight',
+    'Tomato_Late_blight',
+    'Tomato_Leaf_Mold',
+    'Tomato_Septoria_leaf_spot',
+    'Tomato_Spider_mites_Two_spotted_spider_mite',
+    'Tomato__Target_Spot',
+    'Tomato__Tomato_YellowLeaf__Curl_Virus',
+    'Tomato__Tomato_mosaic_virus',
+    'Tomato_healthy'
 ]
 
 # Load translations
@@ -50,18 +50,12 @@ def load_translations(language: str):
     with open(translations_path, "r", encoding="utf-8") as file:
         return json.load(file)
 
-def format_class_name(class_name, translations):
+def format_class_name(class_name):
     formatted_name = class_name.replace('_', ' ').replace('  ', ' ')
-    parts = class_name.split(' ')
-    plant_name_key = parts[0]  # Get the plant name
-    disease_name_key = ' '.join(parts[1:])  # Get the disease name
-
-    # Translate the plant and disease names if translations are available
-    plant_name = translations.get("translations", {}).get(plant_name_key, plant_name_key)
-    disease_name = translations.get("translations", {}).get(disease_name_key, disease_name_key)
-
+    parts = formatted_name.split(' ')
+    plant_name = parts[0]
+    disease_name = ' '.join(parts[1:])
     return plant_name, disease_name
-
 
 @app.get("/ping")
 async def ping():
@@ -74,7 +68,7 @@ def read_file_as_image(data) -> np.ndarray:
 @app.post("/predict")
 async def predict(
         file: UploadFile = File(...),
-        accept_language: str = Header(default="kn")
+        accept_language: str = Header(default="en")
 ):
     # Load the correct language translations
     translations = load_translations(accept_language)
@@ -87,21 +81,23 @@ async def predict(
     confidence = np.max(predictions[0])
 
     # Format the class name and get translated information
-    plant_name, disease_name = format_class_name(predicted_class, translations)
+    plant_name, disease_name = format_class_name(predicted_class)
     disease_info_key = f"{plant_name} {disease_name}"
 
-    # Get disease description and solution
-    disease_info = translations.get("diseases", {}).get(disease_info_key, {})
-    description = disease_info.get("description", "Information not available")
-    solution = disease_info.get("solution", "No solution available")
+    # Retrieve plant name, disease name, description, solution, and link from translations
+    translated_plant_name = translations.get(disease_info_key, {}).get("plant_name", plant_name)
+    translated_disease_name = translations.get(disease_info_key, {}).get("disease_name", disease_name)
+    description = translations.get(disease_info_key, {}).get("description", "Information not available")
+    solution = translations.get(disease_info_key, {}).get("solution", "No solution available")
+    link = translations.get(disease_info_key, {}).get("link", "No link available")
 
     return {
-        'plant': plant_name,
-        'disease': disease_name,
-        # 'class': predicted_class,
+        'plant': translated_plant_name,
+        'disease': translated_disease_name,
         'confidence': float(confidence),
         'description': description,
-        'solution': solution
+        'solution': solution,
+        'link': link
     }
 
 
