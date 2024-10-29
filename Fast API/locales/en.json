@@ -1,0 +1,79 @@
+{
+    "translations": {
+        "Pepper-Bell": "Pepper-Bell",
+        "Bacterial Spot": "Bacterial Spot",
+        "Potato": "Potato",
+        "Early Blight": "Early Blight",
+        "Late Blight": "Late Blight",
+        "Healthy": "Healthy",
+        "Tomato": "Tomato",
+        "Leaf Mold": "Leaf Mold",
+        "Septoria Leaf Spot": "Septoria Leaf Spot",
+        "Spider Mites Two Spotted Spider Mite": "Spider Mites Two Spotted Spider Mite",
+        "Target Spot": "Target Spot",
+        "YellowLeaf Curl_Virus": "YellowLeaf Curl_Virus",
+        "Mosaic Virus": "Mosaic Virus"
+    },
+    "diseases": {
+        "Pepper-Bell Bacterial Spot": {
+            "description": "This disease is caused by bacteria...",
+            "solution": "Use copper-based fungicides and avoid overhead watering."
+        },
+        "Pepper-Bell Healthy": {
+            "description": "Healthy bell pepper plants exhibit vibrant green leaves...",
+            "solution": "No action needed; maintain good growing conditions."
+        },
+        "Potato Early Blight": {
+            "description": "Early blight is caused by the fungus Alternaria solani. It thrives in warm, moist conditions and can be spread by wind, rain, and contaminated tools.",
+            "solution": "Apply fungicides and practice crop rotation to reduce disease impact."
+        },
+        "Potato Late Blight": {
+            "description": "Caused by the pathogen Phytophthora infestans, late blight is particularly notorious for causing extensive damage in wet conditions.",
+            "solution": "Use resistant varieties and apply fungicides regularly."
+        },
+        "Potato Healthy": {
+            "description": "Healthy potato plants exhibit vibrant green leaves...",
+            "solution": "No action needed; maintain good growing conditions."
+        },
+        "Tomato Bacterial Spot": {
+            "description": "The bacterial spot in tomatoes is caused by the bacteria Xanthomonas spp. It’s typically spread through water, such as from rainfall, irrigation, or contaminated soil, as well as via infected seeds and transplants.",
+            "solution": "Spray with 2.0 grams of Copper Oxychloride or 2.0 grams of Streptomycin Sulfate per liter of water."
+        },
+        "Tomato Early Blight": {
+            "description": "Early blight is a common fungal disease caused by Alternaria solani, which thrives in warm, moist environments. It’s primarily spread by wind, rain, and contaminated tools and soil.",
+            "solution": "Spray with 2.0 grams of Mancozeb or 3.0 grams of Copper Oxychloride or 2.0 grams of Metalaxyl Mancozeb per liter of water."
+        },
+        "Tomato Late Blight": {
+            "description": "Late blight is caused by Phytophthora infestans, an aggressive pathogen that can affect both tomatoes and potatoes. It spreads rapidly in cool, wet conditions and is particularly dangerous as it can destroy entire crops.",
+            "solution": "Spray with 2.0 grams of Mancozeb or 3.0 grams of Copper Oxychloride or 2.0 grams of Metalaxyl Mancozeb per liter of water."
+        },
+        "Tomato Leaf Mold": {
+            "description": "This disease is caused by the fungus Passalora fulva, which thrives in warm, humid environments. It can rapidly spread in greenhouses and high-humidity areas.",
+            "solution": "Spray with 2.0 grams of Mancozeb or 3.0 grams of Copper Oxychloride per liter of water."
+        },
+        "Tomato Septoria Leaf Spot": {
+            "description": "This fungal disease, caused by Septoria lycopersici, is common in areas with wet, humid conditions. The fungus overwinters in plant debris and is spread by water splashing onto leaves.",
+            "solution": "Prevent Septoria leaf spot in tomatoes by using disease-free seeds, practicing crop rotation, avoiding overhead watering, and using fungicides containing chlorothalonil or mancozeb."
+        },
+        "Tomato Spider Mites Two_Spotted Spider Mite": {
+            "description": "Spider mites, specifically the Tetranychus urticae species, are tiny pests that thrive in hot, dry conditions and reproduce rapidly. They feed on the undersides of leaves, sucking plant juices and causing damage.",
+            "solution": "Control two-spotted spider mites on tomatoes with insecticidal soaps, horticultural oils, or predatory mites. Prevent infestations by maintaining high humidity, avoiding excessive nitrogen fertilization, and monitoring regularly."
+        },
+        "Tomato Target Spot": {
+            "description": "This disease is caused by Corynespora cassiicola, a fungus that affects tomatoes and other plants.",
+            "solution": "Control target spot in tomatoes by using disease-free seeds, practicing crop rotation, avoiding overhead watering, and using fungicides containing chlorothalonil or mancozeb."
+        },
+        "Tomato YellowLeaf Curl Virus": {
+            "description": "TYLCV is a viral disease primarily spread by whiteflies. The virus affects tomato plant growth and reduces yield.",
+            "solution": "Control Tomato Yellow Leaf Curl Virus (TYLCV) in tomatoes by planting resistant varieties, controlling whiteflies (the virus vector) with insecticides or biological control agents, and removing infected plants."
+        },
+        "Tomato Mosaic Virus": {
+            "description": "TYLCV is a viral disease primarily spread by whiteflies. The virus affects tomato plant growth and reduces yield.",
+            "solution": "Control Tomato Yellow Leaf Curl Virus (TYLCV) in tomatoes by planting resistant varieties, controlling whiteflies (the virus vector) with insecticides or biological control agents, and removing infected plants."
+        },
+        "Tomato Healthy": {
+            "description": "Healthy tomato plants exhibit strong, vibrant leaves and produce high yields without showing signs of disease or pest damage.",
+            "solution": "No action needed; maintain good growing conditions."
+        }
+    }
+}
